@@ -97,7 +97,7 @@ init:
 	rm tbls.deb
 	touch .tbls.yml
 	echo "# DSN (Database Source Name) to connect database\ndsn: mysql://$(DB_USER):$(DB_PASS)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)\n# Path to generate document\n# Default is 'dbdoc'\ndocPath: doc/schema" >> .tbls.yml
-	curl -Lo slackcat https://github.com/bcicen/slackcat/releases/download/v1.7/slackcat-1.7-$(uname -s)-amd64
+	curl -Lo slackcat https://github.com/bcicen/slackcat/releases/download/1.7.2/slackcat-1.7.2-$(uname -s)-amd64
 	sudo mv slackcat /usr/local/bin/
 	sudo chmod +x /usr/local/bin/slackcat
 	slackcat --configure
