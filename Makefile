@@ -17,13 +17,14 @@ ALPSORT=sum
 ALPM="[0-9a-zA-Z]+"
 OUTFORMAT=count,method,uri,min,max,sum,avg,p99
 
-SLACKCAT:=slackcat --tee --channel general
-SLACKRAW:=slackcat --channel general
+CHANNEL:= general
+SLACKCAT:=slackcat --tee --channel $(CHANNEL)
+SLACKRAW:=slackcat --channel $(CHANNEL)
 
 # デプロイ
 # make deploy BRANCH=<ブランチ名>でブランチを指定してデプロイ
 .PHONY: deploy
-deploy: before checkout build restart
+deploy: before checkout build restart slow
 
 .PHONY: before
 before:
