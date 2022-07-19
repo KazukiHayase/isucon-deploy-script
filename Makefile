@@ -92,11 +92,6 @@ init:
 	unzip alp_linux_amd64.zip
 	sudo install ./alp /usr/local/bin
 	rm alp alp_linux_amd64.zip
-	curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-	sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-	echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-	git config --global user.email ""
-	git config --global user.name ""
 	TBLS_VERSION=1.56.0 curl -o tbls.deb -L https://github.com/k1LoW/tbls/releases/download/v$TBLS_VERSION/tbls_$TBLS_VERSION-1_amd64.deb
 	sudo dpkg -i tbls.deb
 	rm tbls.deb
