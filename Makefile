@@ -97,7 +97,6 @@ init:
 	rm tbls.deb
 	touch .tbls.yml
 	echo "# DSN (Database Source Name) to connect database\ndsn: mysql://$(DB_USER):$(DB_PASS)@$(DB_HOST):$(DB_PORT)/$(DB_NAME)\n# Path to generate document\n# Default is 'dbdoc'\ndocPath: doc/schema" >> .tbls.yml
-	sudo cp /etc/nginx/nginx.conf $(PROJECT_ROOT)/etc/nginx/nginx.conf
 	wget https://github.com/bcicen/slackcat/releases/download/v1.5/slackcat-1.5-linux-amd64 -O slackcat
 	sudo mv slackcat /usr/local/bin/
 	sudo chmod +x /usr/local/bin/slackcat
