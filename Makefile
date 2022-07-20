@@ -70,7 +70,7 @@ slow:
 ## pprof
 .PHONY: pprof
 pprof:
-	go tool pprof -http=":8081" http://localhost:6060/debug/pprof/profile
+	go tool pprof -http=0.0.0.0:8080 http://localhost:6060/debug/pprof/profile
 
 # DB
 .PHONY: slow-on
