@@ -75,11 +75,11 @@ pprof:
 # DB
 .PHONY: slow-on
 slow-on:
-	sudo $(MYSQL_CMD) -e "set global slow_query_log_file = '$(MYSQL_LOG)'; set global long_query_time = 0; set global slow_query_log = ON;"
+	echo "set global slow_query_log_file = '$(MYSQL_LOG)'; set global long_query_time = 0; set global slow_query_log = ON;" | sudo mysql -uroot
 
 .PHONY: slow-off
 slow-off:
-	sudo $(MYSQL_CMD) -e "set global slow_query_log = OFF;"
+	echo "set global slow_query_log = OFF;" | sudo mysql -uroot
 
 .PHONY: sql
 sql:
